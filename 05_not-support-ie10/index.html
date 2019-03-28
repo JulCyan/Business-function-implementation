@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>Document</title>
+   <script>
+      if (IEVersion()) {
+         location.href = './not_support.html'
+      };
+
+      function IEVersion() {
+         //取得浏览器的userAgent字符串
+         var userAgent = navigator.userAgent;
+         //判断是否IE浏览器
+         var isIE = userAgent.indexOf("compatible") > -1 && userAgent.indexOf("MSIE") > -1;
+         if (isIE) {
+            var reIE = new RegExp("MSIE (\\d+\\.\\d+);");
+            reIE.test(userAgent);
+            var fIEVersion = parseFloat(RegExp["$1"]);
+            if (fIEVersion <= 10 || !isSupportPlaceholder()) {
+               return true;
+            }
+         } else {
+            return false;
+         }
+      }
+   </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
