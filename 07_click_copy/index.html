@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      #copy-content {
+        position: absolute;
+        top: -99999999px;
+      }
+    </style>
+  </head>
+  <body>
+    <input type="text" value="HelloWorld!" id="copy-content" />
+    <input type="button" value="点击复制" / id="btn">
+    <script>
+      document.getElementById("btn").onclick = () => {
+        var copyobject = document.getElementById("copy-content");
+        copyobject.select();
+        document.execCommand("Copy");
+        alert("复制成功!");
+      };
+    </script>
+  </body>
+</html>
